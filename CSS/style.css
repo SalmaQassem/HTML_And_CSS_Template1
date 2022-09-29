@@ -1,0 +1,628 @@
+/*******Start of Font Styles*******/
+@font-face {
+    font-family: "Main_Font";
+    src: url("../fonts/WorkSans-Bold.ttf");
+    /*,url("../fonts/WorkSans-Bold.eot")
+    ,url("../fonts/WorkSans-Bold.svg")
+    ,url("../fonts/WorkSans-Bold.woff")
+    ,url("../fonts/WorkSans-Bold.woff2");*/
+}
+@font-face {
+    font-family: "Main_Font1";
+    src: url("../fonts/WorkSans-ExtraBold.ttf")
+    /*,url("../fonts/WorkSans-ExtraBold.eot")
+    ,url("../fonts/WorkSans-ExtraBold.svg")
+    ,url("../fonts/WorkSans-ExtraBold.woff")
+    ,url("../fonts/WorkSans-ExtraBold.woff2");*/
+}
+@font-face {
+    font-family: "Main_Font2";
+    src: url("../fonts/WorkSans-SemiBold.ttf")
+    /*,url("../fonts/WorkSans-SemiBold.eot")
+    ,url("../fonts/WorkSans-SemiBold.svg")
+    ,url("../fonts/WorkSans-SemiBold.woff")
+    ,url("../fonts/WorkSans-SemiBold.woff2");*/
+}
+@font-face {
+    font-family: "Main_Font3";
+    src: url("../fonts/WorkSans-ExtraLight.ttf");
+    /*,url("../fonts/WorkSans-ExtraLight.eot")
+    ,url("../fonts/WorkSans-ExtraLight.svg")
+    ,url("../fonts/WorkSans-ExtraLight.woff")
+    ,url("../fonts/WorkSans-ExtraLight.woff2");*/
+}
+@font-face {
+    font-family: "Main_Font4";
+    src: url("../fonts/WorkSans-Light.ttf");
+    /*,url("../fonts/WorkSans-Light.eot")
+    ,url("../fonts/WorkSans-Light.svg")
+    ,url("../fonts/WorkSans-Light.woff")
+    ,url("../fonts/WorkSans-Light.woff2");*/
+}
+@font-face {
+    font-family: "Main_Font5";
+    src: url("../fonts/WorkSans-Medium.ttf");
+    /*,url("../fonts/WorkSans-Medium.eot")
+    ,url("../fonts/WorkSans-Medium.svg")
+    ,url("../fonts/WorkSans-Medium.woff")
+    ,url("../fonts/WorkSans-Medium.woff2");*/
+}
+@font-face {
+    font-family: "Main_Font6";
+    src: url("../fonts/WorkSans-Regular.ttf");
+    /*,url("../fonts/WorkSans-Regular.eot")
+    ,url("../fonts/WorkSans-Regular.svg")
+    ,url("../fonts/WorkSans-Regular.woff")
+    ,url("../fonts/WorkSans-Regular.woff2");*/
+}
+/*******End of Font Styles*******/
+
+/*******Start of Framework*******/
+.center-flex {
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.heading{
+    text-align: center;
+}
+.heading h2 {
+    margin: 0;
+    font-size: 100px;
+    font-family: Main_Font1;
+    letter-spacing: -3px;
+    color: var(--HeadersColor);
+}
+.heading p {
+    margin: -30px 0 0 0;
+    font-family: Main_Font6;
+    font-size: 20px;
+    color: var(--HeadersFontColor);
+}
+.item-text {
+    text-align: initial;
+}
+.item-text h3 {
+    font-family: Main_Font;
+    margin: 0 0 20px 0;
+}
+.item-text p {
+    line-height: 1.6;
+    color: #444;
+}
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    text-align: center;
+}
+/*******End of Framework*******/
+
+/*******Start of Variables*******/
+:root {
+    --MainFontColor: #10cab7;
+    --MainBackground: #f6f6f6;
+    --HeadersColor: #ebeced;
+    --spanColor: #333;
+    --FooterColor: #2c4755;
+    --HeadersFontColor: #777777;
+    --Padding: 60px;
+    --text-padding: 20px;
+    --Margin: 16px;
+    --transitionTime: 0.5s;
+}
+/*******End of Variables*******/
+
+html {
+    scroll-behavior: smooth;
+}
+* {
+    box-sizing: border-box;
+}
+/*******Start of Header&Footer Styles*******/
+.header, .footer{
+    padding: 20px;
+}
+.header .parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .parent img {
+    width: 60px;
+}
+.header .parent .list {
+    position: relative;
+}
+.header .parent .list:hover > span > span:empty:nth-child(2){
+    width: 100%;
+}
+.header .parent .list:hover > ul{
+    display: block;
+}
+.header .parent .list .dash {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.header .parent .list .dash span:empty{
+    background-color: var(--spanColor);
+    margin-bottom: 5px;
+    height: 2px;
+}
+.header .parent .list .dash span:empty:first-child,
+.header .parent .list .dash span:empty:last-child  {
+    width: 100%;
+}
+.header .parent .list .dash span:empty:nth-child(2){
+    width: 60%;
+    transition: var(--transitionTime);
+}
+.footer{
+    background-color: var(--FooterColor);
+    text-align: center;
+    color: white;
+    font-family: 'Main_Font6', serif;
+    font-size: 18px;
+    padding: 30px 10px;
+}
+.footer span{
+    color: var(--MainFontColor);
+    font-family: 'Main_Font', serif;
+}
+/*******Start of menu style*******/
+.header .parent .list ul{
+    position: absolute;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    top: calc(100% + 15px);;
+    list-style: none;
+    font-family: Main_Font6;
+    background-color: var(--MainBackground);
+    display: none;
+    transition: display var(--transitionTime);
+}
+.header .parent .list ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+.header .parent .list ul li a {
+    display: block;
+    color: var(--spanColor);
+    text-decoration: none;
+    padding: 15px;
+    transition: all var(--transitionTime);
+}
+.header .parent .list ul li a:hover {
+    padding-left: 25px;
+}
+.header .parent .list ul::before {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-color: transparent transparent var(--MainBackground) transparent;
+    border-width: 10px;
+    border-style: solid;
+    position: absolute;
+    top: -20px;
+    right: 5px;
+}
+/*******End of menu style*******/
+
+/*******End of Header&Footer Styles*******/
+
+/*******Start of Landing style*******/
+.image {
+    background-image: url("../images/landing.jpg");
+    background-size: cover;
+    height: calc(100vh - 65px);
+    display: flex;
+}
+.Text {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.Text .Hello {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--MainFontColor);
+    font-size: 50px;
+    font-family: "Main_Font";
+    text-align: center;
+}
+.Text .text {
+    line-height: 1.8;
+    font-family: "Main_Font6";
+    font-size: 19px;
+    text-align: center;
+}
+.Icons{
+    padding-top: var(--Padding);
+    padding-bottom: var(--Padding);
+    background-color: var(--MainBackground);
+}
+.Icons .icons.container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.icons.container div[class*="icon"] {
+    padding: 20px;
+    text-align: center;
+}
+.icons.container div[class*="icon"] i {
+    color: var(--MainFontColor);
+    font-size: 50px;
+}
+.icons.container div[class*="icon"] h3 {
+    font-family: Main_Font1;
+    margin: 30px 0;
+}
+.icons.container div[class*="icon"] p {
+    font-family: Main_Font6;
+    color: var(--HeadersFontColor);
+    line-height: 1.8;
+    font-size: 17px;
+}
+/*******End of Landing style*******/
+
+/*******Start of Services style*******/
+.Services {
+    padding-top: var(--Padding);
+    padding-bottom: var(--Padding);
+    box-sizing: border-box;
+}
+.serv.items {
+    margin-top: 100px;
+}
+.services-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+}
+.services-item i {
+    flex-basis: 60px;
+    font-size: 32px;
+    /*margin-right: 30px;*/
+    color: var(--MainFontColor);
+}
+.services-item .item-text p {
+    font-family: Main_Font4;
+}
+.Services .items .column3 .services-img img{
+    width: 260px;
+    height: 350px;
+}
+.Services .items .column3 .services-img {
+    position: relative;
+}
+.Services .items .column3 .services-img::before {
+    content: "";
+    width: 100px;
+    height: 450px;
+    color: #2c4755;
+    background-color: #2c4755;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+/*******End of Services style*******/
+
+/*******Start of Portfolio style*******/
+.Portfolio {
+    padding-top: var(--Padding);
+    padding-bottom: var(--Padding);
+    background-color: var(--MainBackground);
+}
+.port.items {
+    margin-top: 80px;
+}
+.Portfolio img {
+    max-width: 100%;
+}
+.portfolio-item {
+    background-color: white;
+}
+.portfolio-item .port.item-text {
+    padding: var(--text-padding);
+}
+.portfolio-item .port.item-text h3 {
+    margin: 0;
+}
+.portfolio-item .item-text p {
+    margin-bottom: 0;
+    font-family: Main_Font6;
+    color: var(--HeadersFontColor);
+}
+/*******End of Portfolio style*******/
+
+/*******Start of Portfolio style*******/
+.About {
+    padding-top: 60px;
+    padding-bottom: calc(var(--Padding) + 60px);
+}
+.about-items {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.about-image {
+    width: 250px;
+    height: 375px;
+    position: relative;
+}
+.about-image::before {
+    content: " ";
+    background-color: var(--HeadersColor);
+    width: 100px;
+    height: calc(100% + 80px);
+    position: absolute;
+    top: -40px;
+    left:-20px;
+    z-index: -1;
+}
+.about-image::after {
+    content: " ";
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--MainFontColor);
+    border-bottom: 80px solid var(--MainFontColor);
+    position: absolute;
+    top: -40px;
+    right: -150px;
+    z-index: -1;
+}
+.about-items img{
+    max-width: 100%;
+    /*width: 250px;
+    height: 375px;*/
+    /*border-style: none;*/
+}
+.about-text {
+    flex-basis: calc(100% - 500px);
+}
+.about-text h3 {
+    margin-top: var(--Margin);
+    margin-bottom: 50px;
+    line-height: 2;
+    font-family: Main_Font;
+    font-size: 16px;
+}
+.about-text hr{
+    width: 50%;
+    display: inline-block;
+    border-color: var(--MainFontColor);
+}
+.about-text p {
+    line-height: 2;
+    font-family: Main_Font6;
+    color: var(--HeadersFontColor);
+}
+/*******End of Portfolio style*******/
+
+/*******Start of Contact style*******/
+.Contact {
+    padding-top: var(--Padding);
+    padding-bottom: var(--Padding);
+    background-color: var(--MainBackground);
+}
+.contact-items {
+    padding-top: var(--Padding);
+    padding-bottom: var(--Padding);
+    text-align: center;
+}
+.contact-items .p1 {
+    font-family: Main_Font1;
+    letter-spacing: -2px;
+    /*font-size: 35px;*/
+    color: var(--FooterColor);
+    margin: 35px 0 15px 0;
+}
+.contact-items a {
+    display: block;
+    font-family: Main_Font1;
+    /*font-size: 35px;*/
+    color: var(--MainFontColor);
+    text-decoration: none;
+}
+.social {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0 0 0;
+}
+.social p {
+    margin: 0;
+    font-family: Main_Font6;
+}
+.social i {
+    color: var(--FooterColor);
+}
+/*******End of Contact style*******/
+
+/*******Start of Media Query*******/
+
+/*Small devices (landscape phones)*/
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+    }
+    .heading h2 {
+        font-size: 60px;
+    }
+    .heading p {
+        margin-top: -20px;
+    }
+    .Services .items .column3 .services-img {
+        display: none;
+    }
+    .Services .services-item {
+        flex-direction: column;
+    }
+    .Services .services-item i {
+        margin: 0;
+    }
+    .Services .item-text {
+        text-align: center;
+    }
+    .About .about-items {
+        flex-direction: column;
+        text-align: center;
+    }
+    .About .about-image {
+        margin: 0 auto 60px auto;
+    }
+    .About .about-image::before, .About .about-image::after {
+        display: none;
+    }
+    .Contact .contact-items .p1 {
+        font-size: 25px;
+        margin-top: 25px;
+    }
+    .Contact .contact-items a {
+        font-size: 25px;
+    }
+}
+
+/*Medium devices (tablets)*/
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+    .heading h2 {
+        font-size: 100px;
+    }
+    .heading p {
+        margin: -30px 0 0 0;
+    }
+    .Services .items .column3 .services-img {
+        display: none;
+    }
+    .Services .services-item {
+        flex-direction: row;
+    }
+    .Services .services-item i {
+        margin-right: 30px;
+    }
+    .Services .item-text {
+        text-align: initial;
+    }
+    .About .about-items {
+        flex-direction: column;
+        text-align: center;
+    }
+    .About .about-image {
+        margin: 0 auto 60px auto;
+    }
+    .About .about-image::before, .About .about-image::after {
+        display: none;
+    }
+    /*.Contact .contact-items .p1 {
+        font-size: 25px;
+        margin-top: 25px;
+    }
+    .Contact .contact-items a {
+        font-size: 25px;
+    }*/
+    .Contact .contact-items .p1 {
+        font-size: 35px;
+    }
+    .Contact .contact-items a {
+        font-size: 35px;
+    }
+}
+
+/*Large devices (desktops)*/
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+    .heading h2 {
+        font-size: 100px;
+    }
+    .heading p {
+        margin: -30px 0 0 0;
+    }
+    .Services .items .column3 .services-img {
+        display: none;
+    }
+    .Services .services-item {
+        flex-direction: row;
+    }
+    .Services .services-item i {
+        margin-right: 30px;
+    }
+    .Services .item-text {
+        text-align: initial;
+    }
+    .About .about-items {
+        flex-direction: row;
+        text-align: initial;
+    }
+    .About .about-image {
+        margin: 0;
+    }
+    .About .about-image::before, .About .about-image::after {
+        display: block;
+    }
+    .Contact .contact-items .p1 {
+        font-size: 35px;
+    }
+    .Contact .contact-items a {
+        font-size: 35px;
+    }
+}
+
+/*Extra large devices (large desktops)*/
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+    .heading h2 {
+        font-size: 100px;
+    }
+    .heading p {
+        margin: -30px 0 0 0;
+    }
+    .Services .items .column3 .services-img {
+        display: block;
+    }
+    .Services .services-item {
+        flex-direction: row;
+    }
+    .Services .services-item i {
+        margin-right: 30px;
+    }
+    .Services .item-text {
+        text-align: initial;
+    }
+    .About .about-items {
+        flex-direction: row;
+        text-align: initial;
+    }
+    .About .about-image {
+        margin: 0;
+    }
+    .About .about-image::before, .About .about-image::after {
+        display: block;
+    }
+    .Contact .contact-items .p1 {
+        font-size: 35px;
+    }
+    .Contact .contact-items a {
+        font-size: 35px;
+    }
+}
+/*******End of Media Query*******/
